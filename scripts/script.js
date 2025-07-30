@@ -91,3 +91,32 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(whatsappStyle);
 });
+// Menu Hamburguer
+const menuToggle = document.querySelector('.menu-toggle');
+const navUl = document.querySelector('nav ul');
+
+if (menuToggle && navUl) {
+    menuToggle.addEventListener('click', function() {
+        navUl.classList.toggle('show');
+        
+        // Alternar ícone entre hamburguer e X
+        const icon = this.querySelector('i');
+        if (navUl.classList.contains('show')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+    
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', function() {
+            navUl.classList.remove('show');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
+}
