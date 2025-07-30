@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(whatsappStyle);
 });
 // Menu Hamburguer
+// Menu Hamburguer
 const menuToggle = document.querySelector('.menu-toggle');
 const navUl = document.querySelector('nav ul');
 
