@@ -337,7 +337,6 @@ footer {
     color: #aaa;
 }
 
-/* Responsividade */
 /* Ajustes no Header para Mobile */
 @media (max-width: 768px) {
     header {
