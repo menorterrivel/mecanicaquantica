@@ -338,25 +338,92 @@ footer {
 }
 
 /* Responsividade */
+/* Ajustes no Header para Mobile */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
+    header {
+        padding: 0.5rem 0;
+    }
+    
+    .logo-container {
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
+        margin-bottom: 0.5rem;
+    }
+    
+    .logo {
+        width: 40px;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+    
+    .logo-container h1 {
+        font-size: 1.2rem;
+        margin-right: 10px;
+    }
+    
+    .logo-container p {
+        display: none; /* Esconde o slogan em mobile */
+    }
+    
+    nav ul {
+        padding: 0.5rem 0;
+    }
+    
+    nav ul li {
+        margin: 0 0.5rem;
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+    
+    main {
+        margin-top: 120px; /* Reduz o espaço para o conteúdo não ficar escondido */
+    }
+}
+
+/* Menu Hamburguer para telas muito pequenas */
+@media (max-width: 480px) {
+    nav {
+        position: relative;
+    }
+    
+    nav ul {
+        display: none; /* Esconde o menu inicialmente */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        padding: 1rem;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+    
+    nav ul.show {
+        display: flex; /* Mostra o menu quando tem a classe 'show' */
     }
     
     nav ul li {
         margin: 0.5rem 0;
+        text-align: center;
     }
     
-    .hero-content h2 {
-        font-size: 2rem;
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
     }
     
-    .about-content {
-        flex-direction: column;
-    }
-    
-    .about-content img {
-        width: 100%;
+    .logo-container {
+        justify-content: flex-start;
+        padding-left: 1rem;
     }
 }
